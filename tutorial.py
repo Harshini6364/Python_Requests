@@ -24,7 +24,16 @@ post_response=requests.post('https://jsonplaceholder.typicode.com/todos',json=bo
 #print(post_response.status_code)
 
 #Do we have a successful response?
-if post_response.ok:
-    print('success!')
-else:
-    print('failure!')
+#if post_response.ok:
+#    print('success!')
+#else:
+#    print('failure!')
+
+#3. URL Params
+
+params={
+    'userId':'1'
+}
+filter_response=requests.get('https://jsonplaceholder.typicode.com/todos',params=params)
+#print(filter_response)
+print(filter_response.json())
