@@ -36,4 +36,10 @@ params={
 }
 filter_response=requests.get('https://jsonplaceholder.typicode.com/todos',params=params)
 #print(filter_response)
-print(filter_response.json())
+#print(filter_response.json())
+
+#4.Basic Auth
+
+auth=('testuser','password')
+basic_auth_response=requests.get('https://httpbin.org/basic-auth/testuser/password',auth=auth)
+print(basic_auth_response)
