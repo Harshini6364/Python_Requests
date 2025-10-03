@@ -38,8 +38,15 @@ filter_response=requests.get('https://jsonplaceholder.typicode.com/todos',params
 #print(filter_response)
 #print(filter_response.json())
 
-#4.Basic Auth
+#4. Basic Auth
 
 auth=('testuser','password')
 basic_auth_response=requests.get('https://httpbin.org/basic-auth/testuser/password',auth=auth)
-print(basic_auth_response)
+#print(basic_auth_response)
+
+#5. Bearer Auth
+headers={
+    'Authorization': 'Bearer 1234567'
+}
+bearer_auth_response=requests.get('https://httpbin.org/bearer')
+print(bearer_auth_response)
