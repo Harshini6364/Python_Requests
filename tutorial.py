@@ -63,3 +63,22 @@ bad_request = requests.get('https://httpbin.org/status/400')
 # # 401 - Unauthorized
 unauthorized = requests.get('https://httpbin.org/basic-auth/testuser/password')
 # print(unauthorized)
+
+# # 403 - Forbidden
+forbidden = requests.get('https://httpbin.org/status/403')
+# print(forbidden)
+
+# # 404 - Not Found
+not_found = requests.get('https://jsonplaceholder.typicode.com/todo')
+# print(not_found)
+
+# # 500 - Server Errors
+server_error = requests.get('https://httpbin.org/status/500')
+# print(server_error)
+
+#7. Timeout and Try/Except
+try:
+    timeout_response = requests.get('https://httpbin.org/delay/5')
+    print(timeout_response)
+except requests.exceptions.Timeout as e:
+    print('timed out: ', e)
